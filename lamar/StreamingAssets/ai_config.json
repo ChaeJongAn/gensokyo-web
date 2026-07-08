@@ -1,0 +1,5 @@
+{
+    "_readme": "cerebrasApiKey에 cloud.cerebras.ai에서 발급한 키(csk-...)를 붙여넣고 커밋하세요. 프라이빗 레포 전용 — 레포 공개 전환 전 반드시 키 제거 + 재발급.",
+    "cerebrasApiKey": "csk-tnmhf35vrx85wpxk8rxmj6et826w4m2nn5fpmxy8e64dt2dx",
+    "cerebrasModel": "gemma-4-31b"
+}

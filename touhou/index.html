@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>TouhouProject</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #050507;
+      }
+
+      #unity-container {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #050507;
+      }
+
+      #unity-canvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        background: #050507;
+        outline: none;
+      }
+
+      #unity-loading-bar {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: min(360px, 70vw);
+        transform: translate(-50%, -50%);
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+      }
+
+      #unity-progress-bar-empty {
+        width: 100%;
+        height: 10px;
+        margin-top: 14px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      #unity-progress-bar-full {
+        width: 0%;
+        height: 100%;
+        background: #78b7ff;
+      }
+
+      #unity-warning {
+        position: fixed;
+        left: 50%;
+        top: 16px;
+        max-width: min(720px, calc(100vw - 32px));
+        transform: translateX(-50%);
+        font-family: Arial, sans-serif;
+        z-index: 10;
+      }
+
+      #unity-warning div {
+        margin-bottom: 8px;
+        padding: 10px 12px;
+        color: #111;
+        background: #fff3b0;
+      }
+
+      #unity-warning div.error {
+        color: white;
+        background: #b52222;
+      }
+
+      #unity-fullscreen-button {
+        /* itch.io에 이미 풀스크린 버튼이 있고, 풀스크린은 게임 내 설정에서 처리 — 숨김 */
+        display: none;
+        position: fixed;
+        right: max(14px, env(safe-area-inset-right));
+        bottom: max(14px, env(safe-area-inset-bottom));
+        min-width: 112px;
+        height: 36px;
+        padding: 0 14px;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        color: white;
+        background: rgba(0, 0, 0, 0.46);
+        font: 12px/34px Arial, sans-serif;
+        letter-spacing: 0;
+        cursor: pointer;
+        z-index: 9;
+      }
+
+      #unity-fullscreen-button:hover {
+        background: rgba(0, 0, 0, 0.68);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas" width=1280 height=720 tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div>TouhouProject</div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+      <div id="unity-warning"></div>
+      <button id="unity-fullscreen-button" type="button">FULLSCREEN</button>
+    </div>
+    <script>
+      const canvas = document.querySelector("#unity-canvas");
+      const loadingBar = document.querySelector("#unity-loading-bar");
+      const progressBar = document.querySelector("#unity-progress-bar-full");
+      const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      const warningBanner = document.querySelector("#unity-warning");
+
+      function unityShowBanner(msg, type) {
+        const item = document.createElement("div");
+        item.innerHTML = msg;
+        if (type === "error") {
+          item.className = "error";
+        }
+        warningBanner.appendChild(item);
+        if (type !== "error") {
+          setTimeout(() => item.remove(), 5000);
+        }
+      }
+
+      function syncCanvasCssSize() {
+        canvas.style.width = `${window.innerWidth}px`;
+        canvas.style.height = `${window.innerHeight}px`;
+      }
+
+      syncCanvasCssSize();
+      window.addEventListener("resize", syncCanvasCssSize);
+      window.addEventListener("orientationchange", syncCanvasCssSize);
+
+      const buildUrl = "Build";
+      const loaderUrl = buildUrl + "/TouhouWeb.loader.js";
+      const config = {
+        arguments: [],
+        dataUrl: buildUrl + "/TouhouWeb.data.unityweb",
+        frameworkUrl: buildUrl + "/TouhouWeb.framework.js.unityweb",
+        codeUrl: buildUrl + "/TouhouWeb.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "TouhouProject",
+        productVersion: "1.0",
+        showBanner: unityShowBanner,
+        matchWebGLToCanvasSize: true,
+        autoSyncPersistentDataPath: true,
+        devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+      };
+
+      const script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBar.style.width = `${100 * progress}%`;
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => unityInstance.SetFullscreen(1);
+          canvas.focus();
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>

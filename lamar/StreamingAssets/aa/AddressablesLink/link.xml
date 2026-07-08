@@ -1,0 +1,103 @@
+<linker>
+  <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="ArmShieldBlock" preserve="all" />
+    <type fullname="BigIceBullet" preserve="all" />
+    <type fullname="BigIceTrap" preserve="all" />
+    <type fullname="Boomerang" preserve="all" />
+    <type fullname="BulletSpawner" preserve="all" />
+    <type fullname="CameraFollow" preserve="all" />
+    <type fullname="CharacterCard" preserve="all" />
+    <type fullname="CropData" preserve="all" />
+    <type fullname="DamageFlash" preserve="all" />
+    <type fullname="EnemyAI" preserve="all" />
+    <type fullname="EnemyHP" preserve="all" />
+    <type fullname="EnemyStatusEffect" preserve="all" />
+    <type fullname="FallbackDialoguePool" preserve="all" />
+    <type fullname="FarmingSystem" preserve="all" />
+    <type fullname="FrogNPC" preserve="all" />
+    <type fullname="FrogProjectile" preserve="all" />
+    <type fullname="GhostSwordSkill" preserve="all" />
+    <type fullname="IceBullet" preserve="all" />
+    <type fullname="IceExplosion" preserve="all" />
+    <type fullname="IceFog" preserve="all" />
+    <type fullname="IceTrap" preserve="all" />
+    <type fullname="InventorySystem" preserve="all" />
+    <type fullname="ItemData" preserve="all" />
+    <type fullname="Knife" preserve="all" />
+    <type fullname="LanternGlow" preserve="all" />
+    <type fullname="NavAgent2D" preserve="all" />
+    <type fullname="NPCController" preserve="all" />
+    <type fullname="PitObject" preserve="all" />
+    <type fullname="PlayerAttack2" preserve="all" />
+    <type fullname="PlayerBodyVisual" preserve="all" />
+    <type fullname="PlayerClickMove" preserve="all" />
+    <type fullname="PlayerCrouch" preserve="all" />
+    <type fullname="PlayerDodge" preserve="all" />
+    <type fullname="PlayerHP" preserve="all" />
+    <type fullname="PlayerHpUI" preserve="all" />
+    <type fullname="PlayerInteractor" preserve="all" />
+    <type fullname="PlayerItemDrop" preserve="all" />
+    <type fullname="PlayerItemUsage" preserve="all" />
+    <type fullname="PlayerLanternVisual" preserve="all" />
+    <type fullname="PlayerLevel" preserve="all" />
+    <type fullname="PlayerMove" preserve="all" />
+    <type fullname="PlayerMP" preserve="all" />
+    <type fullname="PlayerPersistence" preserve="all" />
+    <type fullname="PlayerShield" preserve="all" />
+    <type fullname="PlayerSP" preserve="all" />
+    <type fullname="PlayerSPArcBar" preserve="all" />
+    <type fullname="PlayerStats" preserve="all" />
+    <type fullname="PlayerSwim" preserve="all" />
+    <type fullname="PlayerTerrainEffect" preserve="all" />
+    <type fullname="PlayerWeaponVisual" preserve="all" />
+    <type fullname="StatusEffect" preserve="all" />
+    <type fullname="Stone" preserve="all" />
+    <type fullname="SwordSpinAttack" preserve="all" />
+    <type fullname="WaterTileDetector" preserve="all" />
+    <type fullname="WireKnife" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.InputSystem, Version=1.14.2.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.InputSystem.InputActionAsset" preserve="all" />
+    <type fullname="UnityEngine.InputSystem.PlayerInput" preserve="all" />
+    <type fullname="UnityEngine.InputSystem.InputAction" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.InputSystem.InputActionMap" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.InputSystem.InputBinding" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.InputSystem.InputControlScheme" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.InputSystem.InputControlScheme/DeviceRequirement" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.InputSystem.PlayerInput/ControlsChangedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.InputSystem.PlayerInput/DeviceLostEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.InputSystem.PlayerInput/DeviceRegainedEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.GameObject" preserve="all" />
+    <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.MeshFilter" preserve="all" />
+    <type fullname="UnityEngine.MeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.Shader" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+    <type fullname="UnityEngine.Transform" preserve="all" />
+    <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider2D" preserve="all" />
+    <type fullname="UnityEngine.CapsuleCollider2D" preserve="all" />
+    <type fullname="UnityEngine.CircleCollider2D" preserve="all" />
+    <type fullname="UnityEngine.PolygonCollider2D" preserve="all" />
+    <type fullname="UnityEngine.Rigidbody2D" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider" preserve="all" />
+  </assembly>
+</linker>

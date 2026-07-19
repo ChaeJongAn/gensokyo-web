@@ -1,0 +1,107 @@
+headersOrigin = "config"
+plugins = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "C:\\Unity\\Unity Project\\TouhouProject-build\\Build\\ComboWeb\\Build\\TouhouWeb"
+publishOrigin = "config"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[headers]]
+for = "/index.html"
+
+[headers.values]
+Cache-Control = "no-cache"
+
+[[headers]]
+for = "/Build/*.wasm"
+
+[headers.values]
+Content-Type = "application/wasm"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/Build/*.wasm.br"
+
+[headers.values]
+Content-Type = "application/wasm"
+Content-Encoding = "br"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/Build/*.wasm.gz"
+
+[headers.values]
+Content-Type = "application/wasm"
+Content-Encoding = "gzip"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/Build/*.js"
+
+[headers.values]
+Content-Type = "application/javascript"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/Build/*.js.br"
+
+[headers.values]
+Content-Type = "application/javascript"
+Content-Encoding = "br"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/Build/*.js.gz"
+
+[headers.values]
+Content-Type = "application/javascript"
+Content-Encoding = "gzip"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/Build/*.data"
+
+[headers.values]
+Content-Type = "application/octet-stream"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/Build/*.data.br"
+
+[headers.values]
+Content-Type = "application/octet-stream"
+Content-Encoding = "br"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/Build/*.data.gz"
+
+[headers.values]
+Content-Type = "application/octet-stream"
+Content-Encoding = "gzip"
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/Build/*.unityweb"
+
+[headers.values]
+Content-Type = "application/octet-stream"
+Cache-Control = "public, max-age=31536000, immutable"
